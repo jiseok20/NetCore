@@ -1,0 +1,11 @@
+C:\Users\a\Desktop\NetCore\NetCore.Data\bin\Debug\net8.0\NetCore.Data.deps.json
+C:\Users\a\Desktop\NetCore\NetCore.Data\bin\Debug\net8.0\NetCore.Data.dll
+C:\Users\a\Desktop\NetCore\NetCore.Data\bin\Debug\net8.0\NetCore.Data.pdb
+C:\Users\a\Desktop\NetCore\NetCore.Data\obj\Debug\net8.0\NetCore.Data.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\a\Desktop\NetCore\NetCore.Data\obj\Debug\net8.0\NetCore.Data.AssemblyInfoInputs.cache
+C:\Users\a\Desktop\NetCore\NetCore.Data\obj\Debug\net8.0\NetCore.Data.AssemblyInfo.cs
+C:\Users\a\Desktop\NetCore\NetCore.Data\obj\Debug\net8.0\NetCore.Data.csproj.CoreCompileInputs.cache
+C:\Users\a\Desktop\NetCore\NetCore.Data\obj\Debug\net8.0\NetCore.Data.dll
+C:\Users\a\Desktop\NetCore\NetCore.Data\obj\Debug\net8.0\refint\NetCore.Data.dll
+C:\Users\a\Desktop\NetCore\NetCore.Data\obj\Debug\net8.0\NetCore.Data.pdb
+C:\Users\a\Desktop\NetCore\NetCore.Data\obj\Debug\net8.0\ref\NetCore.Data.dll

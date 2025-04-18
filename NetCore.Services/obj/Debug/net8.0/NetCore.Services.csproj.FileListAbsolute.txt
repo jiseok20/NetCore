@@ -1,0 +1,15 @@
+C:\Users\a\Desktop\NetCore\NetCore.Services\obj\Debug\net8.0\NetCore.Services.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\a\Desktop\NetCore\NetCore.Services\obj\Debug\net8.0\NetCore.Services.AssemblyInfoInputs.cache
+C:\Users\a\Desktop\NetCore\NetCore.Services\obj\Debug\net8.0\NetCore.Services.AssemblyInfo.cs
+C:\Users\a\Desktop\NetCore\NetCore.Services\obj\Debug\net8.0\NetCore.Services.csproj.CoreCompileInputs.cache
+C:\Users\a\Desktop\NetCore\NetCore.Services\bin\Debug\net8.0\NetCore.Services.deps.json
+C:\Users\a\Desktop\NetCore\NetCore.Services\bin\Debug\net8.0\NetCore.Services.dll
+C:\Users\a\Desktop\NetCore\NetCore.Services\bin\Debug\net8.0\NetCore.Services.pdb
+C:\Users\a\Desktop\NetCore\NetCore.Services\bin\Debug\net8.0\NetCore.Data.dll
+C:\Users\a\Desktop\NetCore\NetCore.Services\bin\Debug\net8.0\NetCore.Data.pdb
+C:\Users\a\Desktop\NetCore\NetCore.Services\obj\Debug\net8.0\NetCore.Services.csproj.AssemblyReference.cache
+C:\Users\a\Desktop\NetCore\NetCore.Services\obj\Debug\net8.0\NetCore..F0A3CAE5.Up2Date
+C:\Users\a\Desktop\NetCore\NetCore.Services\obj\Debug\net8.0\NetCore.Services.dll
+C:\Users\a\Desktop\NetCore\NetCore.Services\obj\Debug\net8.0\refint\NetCore.Services.dll
+C:\Users\a\Desktop\NetCore\NetCore.Services\obj\Debug\net8.0\NetCore.Services.pdb
+C:\Users\a\Desktop\NetCore\NetCore.Services\obj\Debug\net8.0\ref\NetCore.Services.dll
