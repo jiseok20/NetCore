@@ -1,4 +1,5 @@
 using System.Configuration;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.DataProtection;
 using Microsoft.EntityFrameworkCore;
 using NetCore.Services.Data;
@@ -21,7 +22,16 @@ builder.Services.AddDbContext<DBFirstDbContext>(options => options.UseSqlServer(
 
 //DataProtection , 여기에 직접 구현해도 상관없지만 Utils.Common에 함수 만들어서 적용함
 Common.SetDataProtection(builder.Services, @"D:\DataProtector\", "NetCore", Enums.CryptoTpye.CngCbc);
-                
+
+//신원보증과 승인권한
+builder.Services.AddAuthentication(defaultScheme : CookieAuthenticationDefaults.AuthenticationScheme)
+                .AddCookie(options => 
+                {
+                    options.AccessDeniedPath = "/Membership/Forbidden";
+                    options.LoginPath = "/Membership/Login";
+                });
+builder.Services.AddAuthorization();
+builder.Services.AddHttpContextAccessor();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -38,6 +48,9 @@ app.UseStaticFiles();
 app.UseRouting();
 
 app.UseAuthorization();
+
+//신원보증만
+app.UseAuthentication();
 
 app.MapControllerRoute(
     name: "default",

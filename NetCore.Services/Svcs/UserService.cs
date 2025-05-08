@@ -92,10 +92,39 @@ namespace NetCore.Services.Svcs
             //return GetUserInfos().Where(u=>u.UserId.Equals(userId) && u.Password.Equals(password)).Any();//Any method : 리스트 데이터 유무 체크
             return GetUserInfo(userId,password) !=null ? true : false;
         }
+        private User GetUserInfo(string userId) 
+        {
+            return _context.Users.Where(u => u.UserId.Equals(userId)).FirstOrDefault();
+        }
+        
+        private IEnumerable<UserRolesByUser> GetUserRolesByUserInfo(string userId)
+        {
+            var userRolesByUserInfos = _context.UserRolesByUsers.Where(uru => uru.UserId.Equals(userId)).ToList();
+            foreach (var role in userRolesByUserInfos) 
+            {
+                role.UserRole=GetUserRole(role.RoleId);
+            }
+            return userRolesByUserInfos.OrderByDescending(uru=>uru.UserRole.RolePriority);
+        }
+       
+        private UserRole GetUserRole(string roleId)
+        {
+            return _context.UserRoles.Where(ur => ur.RoleId.Equals(roleId)).FirstOrDefault();
+        }
         #endregion
         bool IUser.MatchTheUserInfo(LoginInfo login) //interface에 묶여있는 method기 때문에 public,private,protected 적용 X , Interface를 상속받은 후에 명시적으로 interface 구현
         {
             return checkTheUserInfo(login.UserId, login.Password);
+        }
+
+        User IUser.GetUserInfo(string userId)
+        {
+            return GetUserInfo(userId);
+        }
+
+        IEnumerable<UserRolesByUser> IUser.GetRolesOwnedByUser(string userId)
+        {
+            return GetUserRolesByUserInfo(userId);
         }
     }
 }
