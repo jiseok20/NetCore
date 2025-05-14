@@ -13,6 +13,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 //User 인터페이스가 UserService 클래스를 받기 위해 Services에 등록해야 함.
 builder.Services.AddScoped<IUser,UserService>();
+builder.Services.AddScoped<IPasswordHasher,PasswordHasher>();
 
 //DB접속정보, Migrations 프로젝트 지정 CodeFirstDbContext
 builder.Services.AddDbContext<CodeFirstDbContext>(options => options.UseSqlServer(connectionString: builder.Configuration.GetConnectionString(name: "DefaultConnection"), 
@@ -32,6 +33,7 @@ builder.Services.AddAuthentication(defaultScheme : CookieAuthenticationDefaults.
                 });
 builder.Services.AddAuthorization();
 builder.Services.AddHttpContextAccessor();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -47,10 +49,11 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
-app.UseAuthorization();
+
 
 //신원보증만
 app.UseAuthentication();
+app.UseAuthorization(); //위치가 중요함
 
 app.MapControllerRoute(
     name: "default",

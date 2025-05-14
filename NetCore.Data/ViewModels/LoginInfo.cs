@@ -17,5 +17,8 @@ namespace NetCore.Data.ViewModels
 
         [Display(Name ="내정보 기억")]
         public bool RememberMe { get; set; }
+
+        
+
     }
 }

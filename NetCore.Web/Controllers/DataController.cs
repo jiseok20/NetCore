@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.DataProtection;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.DataProtection;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
 using Microsoft.VisualStudio.Web.CodeGenerators.Mvc.Templates.BlazorIdentity.Pages;
@@ -15,12 +16,14 @@ namespace NetCore.Web.Controllers
             _protector = provider.CreateProtector("NetCore.Data.v1");
         }
         [HttpGet]
+        [Authorize(Roles = "GeneralUser,SuperUser,SystemUser")] // 인증된 사용자만 접근 가능
         public IActionResult AES()
         {
             return View();
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "GeneralUser,SuperUser,SystemUser")] // 인증된 사용자만 접근 가능
         public IActionResult AES(AESInfo aes)
         {
             string message = string.Empty;
